@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图书</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <style>
+        .book{
+        width:500px;
+        margin:30px auto;
+    </style>
+</head>
+<body>
+
+    <div class="book">
+<div>
+<!--    <a href="/bookstore/add3">添加图书</a>-->
+    <a class="btn btn-default" href="/bookstore/add3" role="button">添加图书</a>
+    <br><br>
+</div>
+        <div class="alert alert-success" role="alert">{{say}}</div>
+    <table class="table table-bordered">
+            <tr>
+                <th>ID</th>
+                <th>书名</th>
+                <th>定价</th>
+                <th>零售价</th>
+                <th>出版社</th>
+                <th>编辑</th>
+                <th>删除</th>
+            </tr>
+        {% for book in abook %}
+            <tr>
+                <td>{{book.id}}</td>
+                <td>{{book.title}}</td>
+                <td>{{book.price}}</td>
+                <td>{{book.market_price}}</td>
+                <td>{{book.pub}}</td>
+                <td><a href="/bookstore/mod/{{book.id}}">编辑</a></td>
+                <td><a href="/bookstore/del/{{book.id}}">删除</a></td>
+            </tr>
+        {% empty %}
+        <h1>没有查询到图书</h1>
+        {% endfor %}
+   </table>
+
+</div>
+</div>
+    <script>
+
+        function del(){
+            alert('确定删除吗？');
+        }
+
+    </script>
+
+</body>
+</html>

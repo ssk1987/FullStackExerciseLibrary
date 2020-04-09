@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if x > 0 %}
+<h3>{{ x }} 大于0</h3>
+{% elif x == 0 %}
+<h3>{{ x }} 等于0</h3>
+{% elif x < 0 %}
+<h3>{{ x }} 小于0</h3>
+{% else %}
+{{ x }} 不符合比较要求
+{% endif %}
+</body>
+</html>

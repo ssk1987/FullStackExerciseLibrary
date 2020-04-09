@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    {% block page_title %}
+    <title>Title</title>
+    {% endblock page_title %}
+    <style>
+        .header{
+            margin:0 auto;
+            width:800px;
+            height:100px;
+            border:2px solid red;
+        }
+        .body{
+            margin:0 auto;
+            width:800px;
+            height:500px;
+            border:2px solid blue;
+        }
+        .footer{
+            margin:0 auto;
+            width:800px;
+            height:100px;
+            border:2px solid yellow;
+        }
+    </style>
+</head>
+<body>
+<div class="header">header</div>
+{% block page_info %}
+<div class="body">
+    <h2>body</h2>
+
+<!--<a href="/sport">进入运动页</a>-->
+<!--<a href="/news">进入新闻页</a>-->
+<a href="{% url 'sport' %}">进入运动页</a>
+<a href="{% url 'news' %}">进入新闻页</a>
+
+    <hr>
+<a href="{% url 'pinfo' '1' %}">第1页</a>
+<a href="{% url 'pinfo' '2' %}">第2页</a>
+<a href="/pinfo3">第3页</a>
+
+</div>
+
+{% endblock page_info %}
+<div class="footer">底部</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h2>{{ s }}</h2>
+    <h2>
+        s | safe = {{ s | safe }}
+    </h2>
+    <h2>
+        s|upper = {{ s | upper }}
+    </h2>
+
+    <h2>
+        n + 2 = {{ n | add:2 }}
+    </h2>
+    <h2>
+        n | add:2 | add:5 | add:7 = {{ n | add:2 | add:5 | add:7 }}
+    </h2>
+    <h2>
+        s2 | truncatechars:'8' = {{ s2 | truncatechars:'8' }}
+    </h2>
+</div>
+<ul>
+    {% for city in lst %}
+    <li>{{city }}</li>
+    {% empty %}
+    <li>没有城市</li>
+    {% endfor %}
+</ul>
+<hr>
+<ul>
+    {% for city in lst %}
+    <li>{{ forloop.counter }}、{{city }}</li>
+    {% empty %}
+    <li>没有城市</li>
+    {% endfor %}
+</ul>
+<hr>
+<ul>
+    {% for city in lst %}
+    <li>{{ forloop.counter0 }}、{{city }}</li>
+    {% empty %}
+    <li>没有城市</li>
+    {% endfor %}
+</ul>
+<hr>
+
+<ul>
+    {% for city in lst %}
+    <li>{{ forloop.revcounter }}、{{city }}</li>
+    {% empty %}
+    <li>没有城市</li>
+    {% endfor %}
+</ul>
+<hr>
+
+</body>
+</html>

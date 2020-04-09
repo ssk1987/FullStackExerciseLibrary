@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>社保计算器</title>
+    <style>
+        .box{
+            width:300px;
+            margin:0 auto;
+            text-align: center;
+        }
+        table tr {
+    height: 40px;
+    line-height: 40px;
+}
+    </style>
+</head>
+<body>
+<div class="box">
+    <h2>社保计算器</h2>
+</div>
+<div class="box">
+    <table border="0">
+        <form action="/shebao" method="post">
+        <tr>
+            <td>请输入基数：</td>
+            <td><input type="text" name="base" /></td>
+        </tr>
+        <tr>
+            <td>请输选择户口</td>
+            <td>
+                <select name="city">
+                    <option value ="1">城镇户口</option>
+                    <option value ="0">农村户口</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2"><input type="submit" value="开始计算" /></td>
+        </tr>
+            </form>
+    </table>
+</div>
+</body>
+</html>
